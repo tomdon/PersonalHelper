@@ -1,0 +1,131 @@
+// Place all the styles related to the personal_helper controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a
+  {
+    text-decoration:none;  
+  }
+
+.topOptions
+ {
+   color:white;
+   position:absolute;
+   bottom:10px;
+   font-size:24px;
+   
+        span:hover
+                {
+                   -webkit-animation: mymove 0.5s 1 ;//call mymove animate function
+                }
+        
+     &#jpLink
+      {
+        right:10px;
+      }
+     &#fpLink
+      {
+        right:130px;
+      }
+ }
+
+#topMenu
+ {
+   position:fixed;
+   right:0;
+   top:0;
+   background-color:black;
+   width:100%;
+   height:48px;
+   span
+   {
+     color:white;
+     font-size:24px;
+   }
+
+ }
+ 
+   
+   #jp
+   {
+   
+     position:absolute;
+     right:20px;
+     bottom:0px;
+   }
+   
+   #fp
+   {
+     position:absolute;
+     right:140px;
+     bottom:0px;
+   }
+   
+   #main
+   {
+     position:absolute;
+     top:48px;
+     left:0px;
+   }
+   
+   #fcodeZone
+   {
+  		position:absolute;
+  		left:20px;
+  		top:20px;
+  		font-size:30px;
+  		font-family:comic sans ms;
+  		color:red;
+  		letter-spacing:8px;
+   }
+   
+   #fplist
+   {
+   		position:absolute;
+   		left:20px;
+   		top:60px;
+   		width:200px;
+   		
+   		 .fpParagraph
+		   {
+		   		font-family:Arial;
+		   		color:gray;
+		   		font-size:30px;
+		   		letter-spacing:5px;
+		   }
+   }
+   
+  
+   
+
+	#FPtable
+	{
+		position:absolute;
+   		top:80px;
+   		left:300px;
+   		width:600px;
+   		height:auto;
+		.t18Red{font-size: 24px;line-height: 120%;color:#ff0000;font-weight: bold;}
+
+			h2{ font-size: 18px; color: #244775; line-height: 140%; margin-bottom: 5px;}
+
+			caption{ display: none; }
+			table{ background-color: #cbcbcb; margin-bottom: 5px; }
+
+			th{ background-color: #0B62B1; color: #fff; padding: 3px; }
+
+			td{ background-color: #fff;padding: 3px; }
+
+			td.title{ background-color: #f7f7f7; text-align: center; }
+		}
+		
+	
+	   
+   //define animate function
+   @-webkit-keyframes mymove 
+    {
+        from {}
+        to {-webkit-transform: rotateY(720deg);}
+    }
+   
+

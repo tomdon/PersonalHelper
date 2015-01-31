@@ -1,0 +1,17 @@
+<div>
+	<%=form_for @fapiao, :url => {:controller => 'fapiao', :action => 'create'} do |fp|%>
+	<%= fp.text_field :fcode,placeholder:'在此輸入統一發票號碼',id:'fcodeZone',autofocus:'true' %>
+	<% end %>
+	
+    <div id="fplist">
+    	<% @fpshow.each do |fpshow|%>
+    	<p class="fpParagraph"><%= fpshow.fcode %><%= link_to image_tag("trash.png"),{:controller=>'fapiao',:action=>'destroy',:id=>fpshow},:data=>{:confirm=>"確定要刪除 #{fpshow.fcode} 這張發票？ "}%>,</p>
+    	<% end %>
+		<%= paginate @fpshow %>
+	</div>
+	
+	<div id="FPtable">
+		<%=  @externalInfo.html_safe %>
+	</div>
+
+</div>

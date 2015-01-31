@@ -1,0 +1,2 @@
+module NihongoHelper
+end

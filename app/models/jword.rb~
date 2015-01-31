@@ -1,0 +1,2 @@
+class Jword < ActiveRecord::Base
+end
