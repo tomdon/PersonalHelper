@@ -91,7 +91,7 @@ a
 		   		font-family:Arial;
 		   		color:gray;
 		   		font-size:30px;
-		   		letter-spacing:5px;
+		   		letter-spacing:2px;
 		   }
    }
    
@@ -118,7 +118,15 @@ a
 
 			td.title{ background-color: #f7f7f7; text-align: center; }
 		}
-		
+	
+	#nofapiao
+	{
+		position:absolute;
+		left:0px;
+		top:160px;
+		font-weight:bold;
+		font-family:
+	}
 	
 	   
    //define animate function
