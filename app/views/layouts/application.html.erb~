@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PersonalHelper</title>
+  <title>個人小幫手</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
  <div id="topMenu">
-  <%= link_to raw('<span>日</span><span>文</span><span>筆</span><span>記</span>'),{ :controller => 'nihongo', :action => 'index'},id:'jpLink',class:'topOptions'%>
+  <%= link_to raw('<span>日文筆記</span>'),{ :controller => 'nihongo', :action => 'index'},id:'jpLink',class:'topOptions'%>
 <!--raw 不處理某些字元直接輸出-->
   <%= link_to raw("<span>對</span><span>發</span><span>票</span>"), {:controller => 'fapiao', :action => 'index'},id:'fpLink',class:'topOptions'%>
   <!--raw 不處理某些字元直接輸出-->

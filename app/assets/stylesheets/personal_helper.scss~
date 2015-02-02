@@ -13,11 +13,14 @@ a
    position:absolute;
    bottom:10px;
    font-size:24px;
+   -webkit-transition:color 0.2s,text-shadow 0.5s;
    
-        span:hover
-                {
-                   -webkit-animation: mymove 0.5s 1 ;//call mymove animate function
-                }
+   &:hover
+   {
+   	color:red;
+   	text-shadow: 2px 2px 2px #aa0000;
+   }
+   
         
      &#jpLink
       {
@@ -34,15 +37,9 @@ a
    position:fixed;
    right:0;
    top:0;
-   background-color:black;
+   background:linear-gradient(to right,white,black);
    width:100%;
    height:48px;
-   span
-   {
-     color:white;
-     font-size:24px;
-   }
-
  }
  
    
@@ -87,7 +84,7 @@ a
    		width:200px;
    		
    		 .fpParagraph
-		   {
+		   {	
 		   		font-family:Arial;
 		   		color:gray;
 		   		font-size:30px;
@@ -124,8 +121,7 @@ a
 		position:absolute;
 		left:0px;
 		top:160px;
-		font-weight:bold;
-		font-family:
+		font-weight:bold;	
 	}
 	
 	   
