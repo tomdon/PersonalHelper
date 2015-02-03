@@ -6,12 +6,17 @@
     <div id="fplist">
     	<table>
     	<% @fpshow.each do |fpshow|%>
-
+		<% if checkfp(fpshow.fcode)==="fail" %>
     	<p class="fpParagraph"><%= fpshow.fcode %><%= link_to image_tag("trash.png"),{:controller=>'fapiao',:action=>'destroy',:id=>fpshow},:data=>{:confirm=>"確定要刪除 #{fpshow.fcode} 這張發票？ "}%></p>
+    	<% else %>
+    	<p class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %><%= link_to image_tag("trash.png"),{:controller=>'fapiao',:action=>'destroy',:id=>fpshow},:data=>{:confirm=>"確定要刪除 #{fpshow.fcode} 這張發票？ "}%></p>
+    	<% end %>
     	<% end %>
     	<% if @fpshow.size === 0 %>
+    	<div id="emptyMsg">
     	<%= image_tag("nofapiao.png") %>
     	<p id="nofapiao">資料庫中沒有任何一張發票！</p>
+    	</div>
     	<% end %>
     	</table>
     	
