@@ -6,25 +6,63 @@
     <div id="fplist">
     	<table>
     	<% @fpshow.each do |fpshow|%>
-		<% if checkfp(fpshow.fcode)==="fail" %>
-    	<p class="fpParagraph"><%= fpshow.fcode %><%= link_to image_tag("trash.png"),{:controller=>'fapiao',:action=>'destroy',:id=>fpshow},:data=>{:confirm=>"確定要刪除 #{fpshow.fcode} 這張發票？ "}%></p>
+    	
+    	<% if checkfp(fpshow.fcode)==="Super" %>
+    	
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div>
+    	<span class="fpLuckyP">特別獎</span>
+    	<% elsif checkfp(fpshow.fcode)==="SP" %>
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP">特獎</span>
+    	
+    	<% elsif checkfp(fpshow.fcode)==="Head" %>
+   
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">頭獎</span>
+   
+        	<% elsif checkfp(fpshow.fcode)==="H2" %>
+     
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">二獎</span>
+   
+        	<% elsif checkfp(fpshow.fcode)==="H3" %>
+      
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">三獎</span>
+  
+        	<% elsif checkfp(fpshow.fcode)==="H4" %>
+      
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">四獎</span>
+  
+        	<% elsif checkfp(fpshow.fcode)==="H5" %>
+        	
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">五獎</span>
+    	
+        	<% elsif checkfp(fpshow.fcode)==="H6" %>
+        	
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">六獎</span>
+    	
+    	
+    		<% elsif checkfp(fpshow.fcode)==="Bonus" %>
+    	<div class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %></div><span class="fpLuckyP Nice">增開獎</span>
+    
+        	<% elsif checkfp(fpshow.fcode)==="fail" %>
+        	
+    	<div class="fpParagraph"><del><%= fpshow.fcode %></del></div><span class="fpFail">貢姑</span>
+    	
+    	<% end %>
+    	<% end %>
+    	</table>
+		<% if @fpshow.size!=0 %>
+  	<%= link_to image_tag("trash.png",size:"50"),{:controller=>'fapiao',:action=>'destroy'},:data=>{:confirm=>"確定要刪除全部發票？ "},:id=>'deleteall'%>
     	<% else %>
-    	<p class="fpParagraph fpLucky"><%= image_tag('money.png',size:"16") %><%= fpshow.fcode %><%= link_to image_tag("trash.png"),{:controller=>'fapiao',:action=>'destroy',:id=>fpshow},:data=>{:confirm=>"確定要刪除 #{fpshow.fcode} 這張發票？ "}%></p>
-    	<% end %>
-    	<% end %>
-    	<% if @fpshow.size === 0 %>
     	<div id="emptyMsg">
     	<%= image_tag("nofapiao.png") %>
     	<p id="nofapiao">資料庫中沒有任何一張發票！</p>
     	</div>
     	<% end %>
-    	</table>
     	
 		<%= paginate @fpshow %>
 	</div>
 	
 	<div id="FPtable">
-		<%=  @externalInfo.html_safe %>
+		<%=  @externalInfo.html_safe %><!--將get來的網頁碼以html形式呈現-->
 	</div>
 
 </div>
