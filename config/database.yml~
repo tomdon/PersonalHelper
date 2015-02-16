@@ -51,4 +51,4 @@ production:
   <<: *default
   database: personal_helper_production
   username: root
-  password: shinitakunai8169
+  password: <%= ENV['PERSONAL_HELPER_DATABASE_PASSWORD'] %>

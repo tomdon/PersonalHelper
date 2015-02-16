@@ -1,4 +1,18 @@
 // Place all the styles related to the nihongo controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+#addJp
+	{
+		width:75px;
+		height:55px;
+		border:2px solid red;
+		position:relative;
+		left:7px;
+		top:20px;
+	H2
+		{
+			color:red;
+			position:absolute;
+			bottom:0px;
+		}
+	}

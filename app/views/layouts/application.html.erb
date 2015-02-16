@@ -8,15 +8,20 @@
 </head>
 <body>
  <div id="topMenu">
-  <div id="jpDropdown"><%= link_to raw('<span>日文筆記</span>'),{ :controller => 'nihongo', :action => 'index'},class:'topOptions'%>
   
+     	  <div id="addJp">
+	  	<span>新增單字</span>
+	  	<div id="jpDropdown"><%= link_to raw('<span>日文筆記</span>'),{ :controller => 'nihongo', :action => 'index'},class:'topOptions'%>
   </div>
+	  </div>
 <!--raw 不處理某些字元直接輸出-->
   <div id="fpDropdown">
   <%= link_to raw("<span>對發票</span>"), {:controller => 'fapiao', :action => 'index'},class:'topOptions'%>
   </div>
+
   <!--raw 不處理某些字元直接輸出-->
  </div>
+
  <div id="main">
 <%= yield %>
 </div>
